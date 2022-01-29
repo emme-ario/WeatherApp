@@ -15,5 +15,5 @@ function JSONToMain(jsonObject) {
     const Main = new Main(Main, temperature)
 
     console.log(Main)
-    return Main
+    return Main 
 }

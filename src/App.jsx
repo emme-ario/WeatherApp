@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-
+import PrintData from './WeatherPage';
 
 const API_KEY =  "d5eadf8e319f2c179bf8c1501a4338f5"
 
@@ -47,16 +47,18 @@ function App() {
   return (
     <div className="mainDiv">
       {searchVisible &&
-        <form onSubmit={(ev) => CercaDati(ev)}>
-          <input type="text" value={city} onChange={(ev)=> setCity(ev.target.value)}/> 
-          <input type="submit" value="cerca"></input>
-        </form>
+        <div className="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+            <form onSubmit={(ev) => CercaDati(ev)} className="uk-align-center uk-search uk-search-navbar">
+              {/* <span uk-search-icon></span> */}
+              <input value={city} onChange={(ev)=> setCity(ev.target.value)} className="uk-search-input" type="search" placeholder="Search"></input>
+            </form>
+        </div>
       }
 
-      <pre>{JSON.stringify(weather,null,2)}</pre>
+      {/* <pre>{JSON.stringify(weather,null,2)}</pre> */}
       
       {(typeof weather.main != "undefined") ? (
-        <div className="location">{weather.main.temp},{weather.weather[0].id}</div>
+        <PrintData weather={weather}/>
         ) : ('')}
     </div>
   );
