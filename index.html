@@ -14,41 +14,5 @@
   <body>   
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>  
-    <div id="recipe" style="display: none">
-      <article class="widget">
-        <div id = "wheater.icon" class="weatherIcon">
-          <i class="wi wi-day-cloudy"></i>
-        </div>
-        <div class="weatherInfo">
-          <div id = "temperature"></div>
-          <div class="description">    
-            <div  id="weather.description" class="weatherCondition">CLOUDY</div>    
-            <div id="city">city</div>
-          </div>
-        </div>
-        <div class="date">
-          <p id="date"></p>
-          <script>
-                var myDate = new Date();
-                var myDay = myDate.getDay();
-
-                // Array of days.
-                var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                document.write(weekday[myDay]);
-                document.write("<br/>");
-
-                // get hour value.
-                var hours = myDate.getHours();
-                var ampm = hours >= 12 ? 'PM' : 'AM';
-                hours = hours % 12;
-                hours = hours ? hours : 12;
-                var minutes = myDate.getMinutes();
-                minutes = minutes < 10 ? '0' + minutes : minutes;
-                var myTime = hours + " : " + minutes;
-                document.write(myTime);
-          </script>
-        </div>
-      </article>
-    </div>
   </body>
 </html>
